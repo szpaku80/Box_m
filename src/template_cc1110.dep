@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>506894103</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\bleComms.h</file>
+      <file>$PROJ_DIR$\crc_4b6b.h</file>
+      <file>$PROJ_DIR$\constants.h</file>
+      <file>$PROJ_DIR$\dataProcessing.h</file>
+      <file>$PROJ_DIR$\configuration.h</file>
+      <file>$PROJ_DIR$\deviceSearch.h</file>
+      <file>$PROJ_DIR$\globals.h</file>
+      <file>$PROJ_DIR$\hal_cc8051.h</file>
+      <file>$PROJ_DIR$\hal_defs.h</file>
+      <file>$PROJ_DIR$\hal_types.h</file>
+      <file>$PROJ_DIR$\init.h</file>
+      <file>$PROJ_DIR$\interrupts.h</file>
+      <file>$PROJ_DIR$\ioCCxx10_bitdef.h</file>
+      <file>$PROJ_DIR$\timingController.h</file>
+      <file>$PROJ_DIR$\txFilter.h</file>
+      <file>$PROJ_DIR$\usb\others\clock.c</file>
+      <file>$PROJ_DIR$\usb\others\hal_board.c</file>
+      <file>$PROJ_DIR$\usb\others\hal_int.c</file>
+      <file>$PROJ_DIR$\usb\others\hal_mcu.c</file>
+      <file>$PROJ_DIR$\usb\library\usb_descriptor_parser.c</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_cdc_descriptor.s51</file>
+      <file>$PROJ_DIR$\usb\others\hal_uart_usb.c</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_firmware_library_config.c</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_cdc_hooks.c</file>
+      <file>$PROJ_DIR$\usb\library\usb_standard_requests.c</file>
+      <file>$PROJ_DIR$\crc_4b6b.c</file>
+      <file>$PROJ_DIR$\usb\library\usb_framework.c</file>
+      <file>$PROJ_DIR$\usb\library\usb_interrupt.c</file>
+      <file>$PROJ_DIR$\bleComms.c</file>
+      <file>$PROJ_DIR$\usb\library\usb_suspend.c</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_uart.c</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\interrupts.r51</file>
+      <file>$PROJ_DIR$\usb\others\util_buffer.c</file>
+      <file>$PROJ_DIR$\dataProcessing.c</file>
+      <file>$PROJ_DIR$\deviceSearch.c</file>
+      <file>$PROJ_DIR$\init.c</file>
+      <file>$PROJ_DIR$\interrupts.c</file>
+      <file>$PROJ_DIR$\mDrip.c</file>
+      <file>$PROJ_DIR$\medtronicRF.c</file>
+      <file>$PROJ_DIR$\smartRecovery.c</file>
+      <file>$PROJ_DIR$\timingController.c</file>
+      <file>$PROJ_DIR$\txFilter.c</file>
+      <file>$PROJ_DIR$\usb\others\hal_board.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\clock.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\timingController.r51</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC1110.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\init.pbi</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_firmware_library_config.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_mcu.pbi</file>
+      <file>$PROJ_DIR$\usb\others\hal_led.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\util_buffer.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Exe\MMCommander.d51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\init.r51</file>
+      <file>$PROJ_DIR$\usb\library\usb_descriptor.h</file>
+      <file>$PROJ_DIR$\medtronicRF.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_board.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\timingController.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\deviceSearch.pbi</file>
+      <file>$PROJ_DIR$\usb\library\usb_interrupt.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\mDrip.pbi</file>
+      <file>$PROJ_DIR$\usb\others\hal_types.h</file>
+      <file>$PROJ_DIR$\smartRecovery.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_int.pbi</file>
+      <file>$PROJ_DIR$\usb\library\usb_framework.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\medtronicRF.r51</file>
+      <file>$PROJ_DIR$\usb\others\hal_int.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_cdc_hooks.r51</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\dataProcessing.r51</file>
+      <file>$PROJ_DIR$\usb\others\hal_cc8051.h</file>
+      <file>$PROJ_DIR$\usb\others\hal_defs.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_uart_usb.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\clock.r51</file>
+      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc1111F32.xcl</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_standard_requests.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_framework.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_uart.r51</file>
+      <file>$PROJ_DIR$\usb\others\hal_uart.h</file>
+      <file>$PROJ_DIR$\usb\others\hal_mcu.h</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_firmware_library_headers.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\txFilter.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\List\MMCommander.html</file>
+      <file>$PROJ_DIR$\usb\library\usb_standard_requests.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\deviceSearch.r51</file>
+      <file>$PROJ_DIR$\usb\library\usb_descriptor_parser.h</file>
+      <file>$PROJ_DIR$\usb\others\hal_assert.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_cdc_hooks.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\dataProcessing.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_descriptor_parser.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\medtronicRF.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\interrupts.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_cdc_descriptor.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_mcu.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_firmware_library_config.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_descriptor_parser.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\crc_4b6b.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_suspend.pbi</file>
+      <file>$PROJ_DIR$\usb\library\usb_reg.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\mDrip.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_board.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_interrupt.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_interrupt.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\template_cc1110.pbd</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_uart.h</file>
+      <file>$PROJ_DIR$\usb\others\util_buffer.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_suspend.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Exe\MMCommander.hex</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_int.r51</file>
+      <file>$PROJ_DIR$\usb\library\usb_framework_structs.h</file>
+      <file>$PROJ_DIR$\usb\library\usb_suspend.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC1111.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_framework.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\txFilter.pbi</file>
+      <file>$PROJ_DIR$\usb\others\clock.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_uart.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\bleComms.pbi</file>
+      <file>$PROJ_DIR$\usb\class_cdc\usb_cdc.h</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\smartRecovery.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\bleComms.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_standard_requests.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\util_buffer.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\hal_uart_usb.pbi</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\crc_4b6b.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\smartRecovery.r51</file>
+      <file>$PROJ_DIR$\MMCommander\Debug\Obj\usb_firmware_library_config.r51</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 51 81 106</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\others\clock.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 113 60 110 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\others\hal_board.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 78 42 70 110 45 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\others\hal_int.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 107</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 70 65 42 110 45 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\others\hal_mcu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 78 113 110 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\library\usb_descriptor_parser.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 94</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 47 53 108 60 84 58 63 70 97 82 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\class_cdc\usb_cdc_descriptor.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 91</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A8051</name>
+          <file> 53 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\others\hal_uart_usb.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 77 42 70 110 45 69 104 65 78 103</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\class_cdc\usb_firmware_library_config.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 47 53 108 60 84 58 63 70 97 82 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\class_cdc\usb_cdc_hooks.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 47 53 108 60 84 58 63 70 97 82 109 116 103 49</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\library\usb_standard_requests.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 119</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 47 53 108 60 84 58 63 70 97 82 109 42 110 45 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\crc_4b6b.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 122</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\library\usb_framework.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 111</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 75</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 47 53 108 60 84 58 63 70 97 82 109 65 42 110 45 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\library\usb_interrupt.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 101</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 47 53 108 60 84 58 63 70 97 82 109 42 110 45 69 113</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bleComms.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 115</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 118 72 122 68 83 55 107 92 71 52 31 98 64 123 44 80 66 94 124 75 101 74 105 76 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 45 0 2 6 9 11 103 4 13 10</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 12 45 0 2 6 9 11 103 4 13 10 15 113 60 110 25 33 3 34 1 54 16 78 42 70 69 17 65 18 21 77 104 35 8 7 36 14 37 61 5 38 39 40 41 23 79 47 53 108 84 58 63 97 82 109 116 49 19 22 26 27 24 29 30 32 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\library\usb_suspend.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 105</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 47 53 108 60 84 58 63 70 97 82 109 65 78 42 110 45 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\class_cdc\usb_uart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 114</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 76</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 42 70 110 45 69 65 49 116 47 79 53 108 84 58 63 97 82 109 103 104</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\usb\others\util_buffer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104 60 42 70 110 45 69 65 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\dataProcessing.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 45 0 2 6 9 11 103 4 13 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\deviceSearch.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 6 9 1 54</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\init.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 8 7 12 45 2 6 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\interrupts.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 9 2 12 45 1 11 54 103 77 60 14 0 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\mDrip.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 98</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 10 2 11 54 61 42 60 70 110 45 69 77 103 0 4 5 13 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\medtronicRF.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12 45 54 1 2 6 9 103 77 60 14 4 11 0 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\smartRecovery.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 123</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 6 9 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\timingController.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45 6 9 2 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\txFilter.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MMCommander\Debug\Exe\MMCommander.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 81 106</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 73 118 72 122 68 83 55 107 92 71 52 31 98 64 123 44 80 91 66 94 124 75 101 74 105 76 50 67</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+
