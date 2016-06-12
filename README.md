@@ -1,9 +1,22 @@
+![Alt text](/mDrip_logo.png?raw=true "mDrip logo")
+
 mDrip
 =====
 
     mDrip for the Nightscout Project.
 
-![Alt text](/mDrip_logo.png?raw=true "mDrip logo")
+    This project is a Medtronic to Bluetooth LE bridge (not valid for 640g). 
+    In order to use it to upload data to Nightscout you should install the 
+    "xDrip modified version for mDrip" Android App that you'll find in the 
+    apk directory.
+
+    To build the mDrip hardware please follow the instructions you'll find
+    in the INSTALL.PDF file.
+
+![Alt text](/mDrip_prototype.jpg?raw=true "mDrip Prototype")
+
+    Remember, this is still a beta and several issues have to be fixed (and
+    discovered :-P ).
 
 ## Disclaimer
 
