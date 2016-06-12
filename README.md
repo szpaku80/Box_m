@@ -3,7 +3,7 @@ mDrip
 
     mDrip for the Nightscout Project.
 
-![alt tag](http://github.com/jberian/mdrip/logo.png)
+![alt tag](http://github.com/jberian/mDrip/mDrip_logo.png)
 
 ## Disclaimer
 
