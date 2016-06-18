@@ -70,7 +70,6 @@ void enablePushButtonInt (void)
 #pragma vector = T1_VECTOR
 __interrupt void TIMER1_ISR(void)
 {
-  static char rfState[2];
   unsigned int glucometerCheckSum, i;
   char periodicRx;
   
@@ -84,16 +83,7 @@ __interrupt void TIMER1_ISR(void)
     if (rfOnTimer > 0) rfOnTimer--;
     if (glucometerTimer > 0) glucometerTimer--;
     if (timeCounterOff <= timeCounter) recalculateTiming();
-    
-    // Decrease 5 minute counter and manage txTimer
-    /*if (fiveMinuteCounter == 0) {
-      fiveMinuteCounter = ((5*60 + 0) * 10);
-      txTimer = 0;
-    } else {
-      fiveMinuteCounter--;
-      if (txTimer < ((1*60 + 0) * 10)) txTimer++;
-    }
-    if (txTimer == ((0*60 + 2) * 10)) sendFlag = 1;*/
+    if (bleCommsWatchdogTimer <= ((0*60 + 3) * 10)) bleCommsWatchdogTimer++;
      
     // Check if RF should be on or off
     glucometerCheckSum = 0;
@@ -189,14 +179,14 @@ void enableTimerInt (void)
     EA = 1; IEN1 |= 0x02;  
   
     // Start Timer 1
-    T1CTL = 0x0E;
+    T1CTL = 0x0A;
   } else {
     // Stop Timer 1
     T1CTL = 0x08;
 
     // Set Timer 1 timeout value = Every 100 ms
-    T1CC0H = 0x02;
-    T1CC0L = 0x49; // 0x4A
+    T1CC0H = 0x24;
+    T1CC0L = 0x9E;
     
     // Reset Timer 1 Counter
     T1CNTL = 0x00;
@@ -212,7 +202,7 @@ void enableTimerInt (void)
     EA = 1; IEN1 |= 0x02;  
   
     // Start Timer 1
-    T1CTL = 0x0E;
+    T1CTL = 0x0A; // Tick frequency /32
   }
 }
 
@@ -223,16 +213,18 @@ __interrupt void UART0_RX_ISR(void)
   
   // Clear UART0 RX Interrupt Flag (TCON.URX0IF = 0)
   URX0IF = 0;
-  
-  // Read UART0 RX buffer
-  bleRxBuffer[bleRxIndex] = U0DBUF;
  
-  //receiveBLEMessage (bleRxBuffer, 1);
-  
-  if (bleRxIndex < SIZE_OF_UART_RX_BUFFER-1) {
-    bleRxIndex++;
+  if (bleCommsWatchdogTimer >= (0*60 + 3)*10) {
+    bleRxBuffer[0] = U0DBUF;
+    bleRxIndex = 1;
+  } else {
+    bleRxBuffer[bleRxIndex] = U0DBUF;
+    if (bleRxIndex < SIZE_OF_UART_RX_BUFFER-1) {
+      bleRxIndex++;
+    }
   }
-
+  bleCommsWatchdogTimer = 0;
+  
   notFinishedYet = 1;
   while (notFinishedYet) {
     if ((bleRxIndex > 0) && (bleRxIndex > (bleRxBuffer[0] & 0x00FF))) {

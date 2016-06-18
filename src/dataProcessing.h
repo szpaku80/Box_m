@@ -4,8 +4,6 @@
 void processMessage (char *message, unsigned int length, char dataErr);
 void processInfo (void);
 void updateCalFactor (void);
-void composeInfoUpdateMessage (void);
-void composeGlucometerMessage (void);
 void updateHistoryData (void);
 float getISIGfromRAW (long raw, char adjValue);
 

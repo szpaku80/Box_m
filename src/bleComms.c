@@ -126,8 +126,6 @@ void receiveBLEMessage (char *message, unsigned int messageLen)
       bleTxBuffer[i++] = (timeCounter     ) & 0x0FF;
       bleTxBuffer[i++] = (rfOnTimer   >> 8) & 0x0FF;
       bleTxBuffer[i++] = (rfOnTimer       ) & 0x0FF;
-      bleTxBuffer[i++] = (fiveMinuteCounter >> 8) & 0x0FF;
-      bleTxBuffer[i++] = (fiveMinuteCounter     ) & 0x0FF;
       bleTxBuffer[i++] = (txTimer     >> 8) & 0x0FF;
       bleTxBuffer[i++] = (txTimer         ) & 0x0FF;
       temp = (unsigned int)(calFactor * 256);
@@ -267,4 +265,86 @@ void receiveBLEMessage (char *message, unsigned int messageLen)
       break;
     }
   }
+}
+
+void composeInfoUpdateMessage (void)
+{
+  unsigned int i;
+  unsigned int timeOffset;
+  unsigned char id;
+  
+  i=0;
+  
+  if      ((lastMinilinkID[0] == minilinkID1[0]) &&
+           (lastMinilinkID[1] == minilinkID1[1]) &&
+           (lastMinilinkID[2] == minilinkID1[2])) id = 0;
+  else if ((lastMinilinkID[0] == minilinkID2[0]) &&
+           (lastMinilinkID[1] == minilinkID2[1]) &&
+           (lastMinilinkID[2] == minilinkID2[2])) id = 1;
+  else if ((lastMinilinkID[0] == minilinkID3[0]) &&
+           (lastMinilinkID[1] == minilinkID3[1]) &&
+           (lastMinilinkID[2] == minilinkID3[2])) id = 2;
+  else id = 3;
+  
+  timeOffset = 0;
+  if (id < 3) {
+    if (fiveMinAdjTable[id][(lastMinilinkSeqNum & 0x0F0)>>4] > 0) {
+      timeOffset = timeCounter + fiveMinAdjTable[id][(lastMinilinkSeqNum & 0x0F0)>>4];
+    } 
+  }
+  
+  if ((mySentryFlag == 1) || (minilinkFlag == 1)) {
+
+    bleTxBuffer[i++] = 0x00; // Message length
+    bleTxBuffer[i++] = 0x01; // Message type -> 0x01 = Info update
+    bleTxBuffer[i++] = mySentryFlag*2 + minilinkFlag; // Flags
+    bleTxBuffer[i++] = (timeOffset >> 8) & 0x00FF; // Time offset to be applied
+    bleTxBuffer[i++] = (timeOffset     ) & 0x00FF; // Time offset to be applied
+    if (mySentryFlag == 1) {
+      bleTxBuffer[i++] = (sgv >> 8) & 0x00FF;
+      bleTxBuffer[i++] =  sgv       & 0x00FF;
+    } else {
+      bleTxBuffer[i++] = 0x00;
+      bleTxBuffer[i++] = 0x00;
+    }
+    
+    if (minilinkFlag == 1) {
+      bleTxBuffer[i++] = (rawSgv >> 8) & 0x00FF;
+      bleTxBuffer[i++] =  rawSgv       & 0x00FF;
+      bleTxBuffer[i++] = (raw    >> 8) & 0x00FF;
+      bleTxBuffer[i++] =  raw          & 0x00FF;
+    } else {
+      bleTxBuffer[i++] = 0x00;
+      bleTxBuffer[i++] = 0x00;
+      bleTxBuffer[i++] = 0x00;
+      bleTxBuffer[i++] = 0x00;
+    }
+  
+    bleTxBuffer[i++] = 0xFF;
+    
+    bleTxBuffer[0] = i-1;
+        
+    bleTxLength = i;
+  
+    uart0StartTxForIsr();
+  }
+}
+
+void composeGlucometerMessage (void)
+{
+  unsigned int i;
+  
+  i=0;
+   
+  bleTxBuffer[i++] = 0x00; // Message length
+  bleTxBuffer[i++] = 0x02; // Message type -> 0x02 = Glucometer reading
+  
+  bleTxBuffer[i++] = (bgReading >> 8) & 0x00FF;
+  bleTxBuffer[i++] =  bgReading       & 0x00FF;
+  
+  bleTxBuffer[0] = i-1;
+  
+  bleTxLength = i;
+  
+  uart0StartTxForIsr();
 }

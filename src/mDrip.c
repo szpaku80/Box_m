@@ -1,12 +1,12 @@
 
 /***********************************************************************************
-  Filename:     MMCommander.c
+  Filename:     mDrip.c
 
-  Description:  Medtronic-enabled USB interface
+  Description:  Medtronic-enabled BLE interface
 
   Version:      1
   Revision:     86
-  Date:         Dec 24th, 2014
+  Date:         Jun 14th, 2016
 
 ***********************************************************************************/
 
@@ -56,6 +56,7 @@ unsigned long __xdata lastraw[9];
 unsigned long __xdata rawSgv;
 unsigned int  __xdata bgReading;
 unsigned char __xdata adjValue;
+unsigned char __xdata warmUp;
 float  __xdata isig;
 float  __xdata calFactor;
 char   __xdata lastCalMoment[2];
@@ -70,13 +71,14 @@ unsigned char  __xdata missesTable     [3][8];
          int   __xdata fiveMinAdjTable [3][8];
          char  __xdata timingTableCorrect [3];
          
-unsigned int __xdata timeCounter;
-unsigned int __xdata timeCounterOn;
-unsigned int __xdata timeCounterOff;
-unsigned int __xdata fiveMinuteCounter;
-unsigned int __xdata rfOnTimer;
-unsigned int __xdata txTimer;
-unsigned int __xdata glucometerTimer;
+unsigned int  __xdata timeCounter;
+unsigned int  __xdata timeCounterOn;
+unsigned int  __xdata timeCounterOff;
+unsigned int  __xdata rfOnTimer;
+unsigned int  __xdata txTimer;
+unsigned int  __xdata glucometerTimer;
+unsigned int  __xdata bleCommsWatchdogTimer;
+         char __xdata rfState[2];
 
 unsigned int  __xdata historySgv         [16];
 unsigned int  __xdata historyRawSgv      [16];
@@ -122,7 +124,7 @@ char   __xdata glucometerID2[3] = {0x00, 0x00, 0x00};
       hm10Detected = initHM10();
     }
     
-    // Flash coding for HM10 detection
+    // LED Flash coding for HM10 detection
     for (j=0; j<5; j++) for (k=0; k<32567; k++);
     P1_1 = 1;
     for (j=0; j<5; j++) for (k=0; k<32567; k++);

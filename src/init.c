@@ -37,16 +37,12 @@ void configureOsc (void)
   asm("NOP");
   CLKCON &= 0xC0;
   CLKCON &= ~MAIN_OSC_BITS; // starting the Crystal Oscillator
-  CLKCON |= 0x28;
+  CLKCON |= 0x18;           // Tick speed = fref/8
   SLEEP |= OSC_PD_BIT;      // powering down the unused oscillator
 }
 
 void configureMedtronicRFMode (void)
 {
-  char currentRFST;
-  
-  currentRFST = RFST;
-  
   RFST = RFST_SIDLE;
   
   SYNC1 = 0xFF; SYNC0 = 0x00;
@@ -82,7 +78,12 @@ void configureMedtronicRFMode (void)
 
   RFTXRXIE = 0;
   
-  RFST = currentRFST;
+  if (rfState[0] == 1) {
+    RFST = RFST_SRX;
+  } else {
+    RFST = RFST_SIDLE;
+  }
+ 
 }
 
 void configureUART (void)
@@ -175,8 +176,11 @@ void initGlobals (void)
   timeCounter  = ((20*60 + 0) * 10);
   timeCounterOn  = 0;
   timeCounterOff = 0;
+  bleCommsWatchdogTimer = 0;
   mySentryFlag = 0;
   rfFrequencyMode = _USA_FREQUENCY_MODE_;
+  rfState[0] = 0;
+  rfState[1] = 0;
  
   for (i=0; i<16; i++) {
     historySgv         [i] = 0;
