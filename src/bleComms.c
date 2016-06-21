@@ -171,8 +171,12 @@ void receiveBLEMessage (char *message, unsigned int messageLen)
     case 0x24:
       if (messageLen == 20) {
         i = 1;
-        if (message[1] != rfFrequencyMode) configureMedtronicRFMode();
-        rfFrequencyMode = message[i++];
+        if (message[1] != rfFrequencyMode) {
+          rfFrequencyMode = message[i++];
+          configureMedtronicRFMode();
+        } else {
+          rfFrequencyMode = message[i++];
+        }    
         minilinkID1[0] = message[i++];
         minilinkID1[1] = message[i++];
         minilinkID1[2] = message[i++];
