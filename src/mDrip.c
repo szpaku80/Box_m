@@ -95,6 +95,7 @@ char   __xdata pumpID[3]        = {0x00, 0x00, 0x00};
 char   __xdata glucometerID1[3] = {0x00, 0x00, 0x00};
 char   __xdata glucometerID2[3] = {0x00, 0x00, 0x00};
 
+
 /******************************************************************************
 * MAIN FUNCTION
 */

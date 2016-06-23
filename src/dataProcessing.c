@@ -118,7 +118,9 @@ void updateCalFactor (void)
   static int prevSgv;
   int sgvDelta;
   
-  if ((minilinkFlag == 1) && (mySentryFlag == 1) &&
+  if (warmUp == 1) calFactor = 0.0;
+  
+  if (((minilinkFlag == 1) && (warmUp == 0)) && (mySentryFlag == 1) &&
       (sgv >= 30)) {
     
     currentFactor = (float)(sgv) / isig;
@@ -143,7 +145,7 @@ void updateCalFactor (void)
       }
     }
     
-    prevSgv = sgv;
+    prevSgv = sgv; 
   }
 }
 
